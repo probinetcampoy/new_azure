@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelNow - Explorez le monde</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar">
+        <div class="logo">TravelNow</div>
+        <ul class="nav-links">
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#offres">Offres</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Partez à l’aventure avec TravelNow</h1>
+        <p>Découvrez les plus belles destinations au meilleur prix.</p>
+        <a href="#destinations" class="btn">Voir les voyages</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="search-section">
+        <h2>Rechercher une destination</h2>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Ex : Bali, Tokyo, Rome..."
+        />
+      </section>
+
+      <section id="destinations" class="section">
+        <h2>Nos destinations populaires</h2>
+        <div class="cards-container" id="cardsContainer">
+          <div class="card" data-name="Bali">
+            <img
+              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80"
+              alt="Bali"
+            />
+            <div class="card-content">
+              <h3>Bali</h3>
+              <p>Plages paradisiaques, temples et détente au soleil.</p>
+              <span class="price">À partir de 899€</span>
+            </div>
+          </div>
+
+          <div class="card" data-name="Tokyo">
+            <img
+              src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80"
+              alt="Tokyo"
+            />
+            <div class="card-content">
+              <h3>Tokyo</h3>
+              <p>Une ville vibrante entre tradition japonaise et modernité.</p>
+              <span class="price">À partir de 1199€</span>
+            </div>
+          </div>
+
+          <div class="card" data-name="Rome">
+            <img
+              src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1200&q=80"
+              alt="Rome"
+            />
+            <div class="card-content">
+              <h3>Rome</h3>
+              <p>Culture, histoire et gastronomie au cœur de l’Italie.</p>
+              <span class="price">À partir de 699€</span>
+            </div>
+          </div>
+
+          <div class="card" data-name="New York">
+            <img
+              src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1200&q=80"
+              alt="New York"
+            />
+            <div class="card-content">
+              <h3>New York</h3>
+              <p>La ville qui ne dort jamais vous attend.</p>
+              <span class="price">À partir de 1299€</span>
+            </div>
+          </div>
+
+          <div class="card" data-name="Marrakech">
+            <img
+              src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=80"
+              alt="Marrakech"
+            />
+            <div class="card-content">
+              <h3>Marrakech</h3>
+              <p>Un mélange unique de couleurs, saveurs et traditions.</p>
+              <span class="price">À partir de 549€</span>
+            </div>
+          </div>
+
+          <div class="card" data-name="Santorin">
+            <img
+              src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80"
+              alt="Santorin"
+            />
+            <div class="card-content">
+              <h3>Santorin</h3>
+              <p>
+                Des paysages magnifiques et des couchers de soleil inoubliables.
+              </p>
+              <span class="price">À partir de 799€</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="offres" class="section offers">
+        <h2>Offres spéciales</h2>
+        <div class="offers-grid">
+          <div class="offer-box">
+            <h3>-20% sur les séjours d’été</h3>
+            <p>
+              Profitez de nos réductions exceptionnelles pour voyager en
+              famille.
+            </p>
+          </div>
+          <div class="offer-box">
+            <h3>Week-end romantique</h3>
+            <p>Des city-breaks à prix doux pour une escapade à deux.</p>
+          </div>
+          <div class="offer-box">
+            <h3>Dernière minute</h3>
+            <p>
+              Réservez vite et partez dans les prochains jours à prix cassés.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="apropos" class="section about">
+        <h2>À propos de nous</h2>
+        <p>
+          TravelNow est une plateforme de réservation de voyages qui aide les
+          utilisateurs à trouver leur prochaine destination facilement. Notre
+          objectif est de proposer une expérience simple, rapide et agréable.
+        </p>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Votre nom" required />
+          <input type="email" placeholder="Votre email" required />
+          <textarea rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 TravelNow - Tous droits réservés</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
