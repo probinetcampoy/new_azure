@@ -9,32 +9,23 @@ function fetchApiData($url) {
     if (function_exists('curl_init')) {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $curlError = curl_error($ch);
-
         curl_close($ch);
 
-        if ($response === false) {
-            return [false, "Erreur cURL : " . $curlError];
-        }
-
-        if ($httpCode >= 400) {
-            return [false, "Erreur HTTP : " . $httpCode . " | Réponse : " . substr($response, 0, 300)];
+        if ($response === false || $httpCode >= 400) {
+            return [false, $curlError ?: "HTTP $httpCode"];
         }
 
         return [$response, null];
     }
 
-    $response = file_get_contents($url);
-
+    $response = @file_get_contents($url);
     if ($response === false) {
-        return [false, "Impossible de contacter l'API avec file_get_contents"];
+        return [false, "Impossible de contacter l'API"];
     }
 
     return [$response, null];
@@ -47,9 +38,7 @@ if ($response === false) {
 } else {
     $decoded = json_decode($response, true);
 
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        $error = "JSON invalide : " . json_last_error_msg() . " | Réponse brute : " . htmlspecialchars(substr($response, 0, 300));
-    } elseif (!is_array($decoded)) {
+    if (!is_array($decoded)) {
         $error = "Réponse API invalide.";
     } else {
         $destinations = $decoded;
